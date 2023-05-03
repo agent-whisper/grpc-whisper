@@ -1,14 +1,14 @@
 # grpc-whisper
 
-gRPC server for running OpenAI's Whisper Models and its other flavors.
+gRPC server for running OpenAI's Whisper Model and its other flavors.
 
 # Features
 
 - Uses gRPC protocol.
 - **[Experimental]** Uses different subthread for each Whisper model instance. This allows a single server instance to load multiple instances of the model, allowing for parallel transcriptions (see the notes on deploying multiple model instances).
 - Currently supports the following Whisper flavors:
-  - OpenAI Whisper
-  - Stable Whisper
+  - [OpenAI](https://github.com/openai/whisper)
+  - [stable-ts](https://github.com/jianfch/stable-ts)
 
 # Backlogs
 
