@@ -11,4 +11,4 @@ _logger_id = logger.add(sys.stderr, level=settings.LOG_LEVEL)
 def set_logger_level(level):
     global _logger_id
     logger.remove(_logger_id)
-    logger.add(sys.stderr, level=level)
+    _logger_id = logger.add(sys.stderr, level=level)
