@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package transcription;
+
+message Segment {
+    int32 id = 1;
+    float seek = 2;
+    float start = 3;
+    float end = 4;
+    string text = 5;
+    repeated int32 tokens = 6;
+    float temperature = 7;
+    float avg_logprob = 8;
+    float compression_ratio = 9;
+    float no_speech_prob = 10;
+}
+
+message TranscriptionResult {
+    string text = 1;
+    string language = 2;
+    repeated Segment segments = 3;    
+}

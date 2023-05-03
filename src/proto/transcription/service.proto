@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package transcription;
+
+import "result.proto";
+
+service TranscriptionService {
+  rpc Transcribe(TranscriptionRequest) returns (TranscriptionResponse) {}
+}
+
+message TranscriptionRequest {
+  bytes data = 1;
+  string language = 2;
+  string initialPrompt = 3;
+}
+
+
+message TranscriptionResponse {
+  bool success = 1;
+  string message = 2;
+  TranscriptionResult result = 3;
+}
