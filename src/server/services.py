@@ -62,7 +62,7 @@ class TranscriptionService(GrpcTranscriptionService):
                     result = loop.run_until_complete(
                         engine.transcribe(
                             request.data,
-                            language=request.language,
+                            language=request.language or None,
                             initial_prompt=request.initialPrompt,
                         )
                     )
