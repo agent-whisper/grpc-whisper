@@ -46,9 +46,20 @@ This will:
 
 # Client Side
 
-The server uses grpc.aio module, so for python client, the function must also be an async function. See `src/client/cli.py` for the client side example. Also note that the server response has the following structure:
+## Client repository
+
+Client for this repository is availabe at https://github.com/agent-whisper/grpc-whisper-client
+
+## Testing locally
+The server request-response have the following structure:
 
 ```
+message TranscriptionRequest {
+  bytes data = 1;
+  string language = 2;
+  string initialPrompt = 3;
+}
+
 message TranscriptionResponse {
   bool success = 1;
   string message = 2;
