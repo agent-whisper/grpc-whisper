@@ -54,7 +54,7 @@ class WhisperResultWrapper:
     def __init__(self, result: Union[Dict, WhisperResult], *, module: WhisperModules):
         if module == WhisperModules.openai:
             self._wrap_openai_result(result)
-        elif module == WhisperModules.stable_whisper:
+        elif module == WhisperModules.stable_ts:
             self._wrap_stable_whisper_result(result)
         else:
             raise UnsupportedModelError(f"Unsupported module: {module}")
@@ -91,7 +91,7 @@ def get_model(
 
         model = whisper.load_model(model_size, device=device)
 
-    elif module == WhisperModules.stable_whisper:
+    elif module == WhisperModules.stable_ts:
         import stable_whisper
 
         model = stable_whisper.load_model(model_size, device=device)

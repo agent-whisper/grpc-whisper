@@ -3,7 +3,7 @@ from enum import Enum
 
 class WhisperModules(str, Enum):
     openai = "openai"
-    stable_whisper = "stable_whisper"
+    stable_ts = "stable_ts"
 
 
 class WhisperModelSizes(str, Enum):
